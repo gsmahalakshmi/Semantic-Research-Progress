@@ -1,0 +1,148 @@
+out for L1_filtration
+----------------------
+Total number of nodes before filtration : 116
+Average semantic Value0.03821999999999999
+Total number of nodes after filtration: 44
+
+out for L2_filtration
+----------------------
+Total number of nodes 31
+Sum of semantic Values1.1795599999999997
+Average semantic Value0.038050322580645154
+Total number of nodes after filtration: 11
+
+out for L3_filtration
+----------------------
+Total number of nodes before filtration: 11
+Sum of semantic Values0.40778000000000003
+Average semantic Value0.03707090909090909
+Total number of nodes after filtration: 4
+
+
+out for L4_filtration
+----------------------
+Total number of nodes before filtration: 4
+Sum of semantic Values0.17332999999999998
+Average semantic Value0.043332499999999996
+Total number of nodes after filtration: 2
+
+out put for seed_L1 edges:
+----------------------------
+seed-L1 Edges remained after constraint
+=======================================
+000-011
+000-013
+000-016
+000-019
+000-024
+000-025
+000-027
+000-048
+000-050
+000-053
+000-054
+000-055
+000-056
+000-080
+000-087
+000-095
+000-096
+000-097
+000-098
+000-099
+000-100
+000-103
+000-105
+000-111
+000-118
+000-122
+000-126
+000-127
+000-135
+000-136
+000-137
+000-140
+000-143
+000-146
+000-147
+000-148
+000-150
+000-153
+000-174
+000-194
+000-198
+000-206
+000-209
+000-215
+Total No.of  seed=L1 edges after constraint :44
+
+out put for L1_L2 edges:
+----------------------------
+
+
+L1-L2 Edges remained after constraint
+=======================================
+118-125
+118-129
+103-138
+153-162
+153-163
+147-175
+148-175
+150-175
+147-176
+174-166
+194-107
+209-107
+209-102
+174-167
+Total No.of  L1=l2 edges after constraint :14
+
+
+out put for L3_L4 edges:
+----------------------------
+L3-L4 Edges remained after constraint
+=======================================
+141-168
+141-171
+Total No.of  L1=l2 edges after constraint :2
+
+
+output for path1:
+-----------------
+
+Path-1 [000, 001, 030, 124, 147, 148, 175]
+Path-2 [000, 001, 030, 124, 147, 150, 175]
+Path-3 [000, 001, 030, 124, 147, 175]
+Path-4 [000, 001, 030, 124, 148, 175]
+Path-5 [000, 001, 030, 124, 150, 175]
+Path-6 [000, 124, 147, 148, 175]
+Path-7 [000, 124, 147, 150, 175]
+Path-8 [000, 124, 147, 175]
+Path-9 [000, 124, 148, 175]
+Path-10 [000, 124, 150, 175]
+Path-11 [000, 147, 148, 175]
+Path-12 [000, 147, 150, 175]
+Path-13 [000, 147, 175]
+Path-14 [000, 148, 175]
+Path-15 [000, 150, 175]
+Path-16 [000, 206, 124, 147, 148, 175]
+Path-17 [000, 206, 124, 147, 150, 175]
+Path-18 [000, 206, 124, 147, 175]
+Path-19 [000, 206, 124, 148, 175]
+Path-20 [000, 206, 124, 150, 175]
+Path-21 [000, 191, 124, 147, 148, 175]
+Path-22 [000, 191, 124, 147, 150, 175]
+Path-23 [000, 191, 124, 147, 175]
+Path-24 [000, 191, 124, 148, 175]
+Path-25 [000, 191, 124, 150, 175]
+No.of Paths-25
+
+output for path2:
+-----------------
+Path-1 [000, 148, 175]
+Path-2 [000, 147, 175]
+Path-3 [000, 150, 175]
+No.of Paths-3
+
+

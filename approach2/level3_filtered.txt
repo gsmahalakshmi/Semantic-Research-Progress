@@ -1,0 +1,210 @@
+package paths;
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class level3_filtered{
+public static void main (String[] args) throws java.io.IOException,java.util.NoSuchElementException
+{
+
+File myFile2=new File("C:/Users/Admin/workspace/topic.java/data/paths/scores.txt");
+File myFile1=new File("C:/Users/Admin/workspace/topic.java/data/paths/level_3/BFS_3_sorted.txt");
+FileReader f1=new FileReader(myFile1);
+FileReader f2=new FileReader(myFile2);
+
+LineNumberReader lnr1=new LineNumberReader(f1);
+LineNumberReader lnr2=new LineNumberReader(f2);
+Double avg=0.0000;
+    try {
+    	
+    FileOutputStream out1=new FileOutputStream("C:/Users/Admin/workspace/topic.java/data/paths/level_3/semantic_score.txt");
+  	FileOutputStream out2=new FileOutputStream("C:/Users/Admin/workspace/topic.java/data/paths/level_3/node_score.txt");
+  	FileOutputStream out3=new FileOutputStream("C:/Users/Admin/workspace/topic.java/data/paths/level_3/score_node.txt");
+  	PrintStream p1=new PrintStream(out1);
+  	PrintStream p2=new PrintStream(out2);
+  	PrintStream p3=new PrintStream(out3);
+  	
+  	int linenumber1=0;
+  	int linenumber2=0;
+  	while (lnr1.readLine() != null){
+    	linenumber1++;
+        }
+
+        System.out.println("Total number of lines file 1: " + linenumber1);
+
+          while (lnr2.readLine() != null){
+        	linenumber2++;
+            }
+
+            System.out.println("Total number of lines file 2: " + linenumber2);
+                  
+            String line1 = lnr1.readLine();
+            String line2 = lnr2.readLine();
+           
+           lnr1.close();
+           lnr2.close();
+           
+           FileInputStream fstream1 = new FileInputStream("C:/Users/Admin/workspace/topic.java/data/paths/level_3/BFS_3_sorted.txt");  
+           FileInputStream fstream2 = new FileInputStream("C:/Users/Admin/workspace/topic.java/data/paths/scores.txt");  
+           
+          DataInputStream in1 = new DataInputStream(fstream1);  
+           BufferedReader br1 = new BufferedReader(new InputStreamReader(in1));  
+          DataInputStream in2 = new DataInputStream(fstream2);  
+           BufferedReader br2 = new BufferedReader(new InputStreamReader(in2));  
+           
+         String strLine1, strLine2; 
+         strLine1 = br1.readLine();
+            strLine2 = br2.readLine();
+         
+         for (int i = 0; i <myFile1.length(); i++) {
+        	
+             while (strLine1 != null && strLine2 != null)
+             {
+             	             	
+                 if (strLine1.equals(strLine2))
+                 {
+                 	System.out.println("Level three node: " + strLine1);
+                 	strLine2 = br2.readLine();
+                 	 System.out.println("Respective Semantic Score: " + strLine2);
+                 	 
+                 	 p1.println(strLine2); 
+                 	 p2.println(strLine1);
+                 	 p2.println(strLine2);
+                 	p3.println(strLine2);
+                	 p3.println(strLine1);
+                 	 
+                 	 break;
+                 }
+                                 
+                 strLine2 = br2.readLine();
+             } 
+            
+             strLine1=br1.readLine();
+             }
+         File myFile3=new File("C:/Users/Admin/workspace/topic.java/data/paths/level_3/semantic_score.txt");
+         FileInputStream fstream3 = new FileInputStream("C:/Users/Admin/workspace/topic.java/data/paths/level_3/semantic_score.txt");  
+         FileReader f3=new FileReader(myFile3);
+         LineNumberReader lnr3=new LineNumberReader(f3);
+         int linenumber3=0;
+       	while (lnr3.readLine() != null){
+         	linenumber3++;
+             }
+
+             System.out.println("Total number of lines file Semantic_score: " + linenumber3);
+         DataInputStream in3 = new DataInputStream(fstream3);  
+          BufferedReader br3 = new BufferedReader(new InputStreamReader(in3));  
+          
+         Integer j;
+         Double sum=0.00000;
+         
+         
+         
+         Scanner textfile1 = new Scanner(new File("C:/Users/Admin/workspace/topic.java/data/paths/level_3/semantic_score.txt"));
+
+         try{
+         for(j=0;j<linenumber3;j++){
+      	   sum=sum+textfile1.nextDouble();
+      	   
+          }
+         
+         System.out.println("Sum of semantic Values"+sum);
+         //Double avg=0.0000;
+         avg=sum/linenumber3;
+         System.out.println("Average semantic Value"+avg);
+         
+         
+         
+         }
+         catch(Exception e){
+         e.printStackTrace();
+         }
+         
+         
+       out1.close();
+       out2.close();
+       out3.close();
+       fstream1.close();
+       fstream2.close();
+       fstream3.close();
+       File myFile4=new File("C:/Users/Admin/workspace/topic.java/data/paths/level_3/semantic_score.txt");
+       Scanner textfile2 = new Scanner(new File("C:/Users/Admin/workspace/topic.java/data/paths/level_3/semantic_score.txt"));
+       Double start=0.0000;
+       start=textfile2.nextDouble();
+       try{
+    	  
+    	  FileOutputStream out4=new FileOutputStream("C:/Users/Admin/workspace/topic.java/data/paths/level_3/After_filter_semantic_score.txt");
+       PrintStream p4=new PrintStream(out4);
+       System.out.println("Semantic Scores after Filtration:");
+       System.out.println("\n");
+       for(int k=0;k<myFile4.length();k++){
+       if(start!=null && start>=avg){
+       System.out.println(start);
+       p4.println(start);
+      
+       }
+       start=textfile2.nextDouble();
+       }
+       
+    }
+       catch(Exception e){
+    	  // System.out.println("Error"+e);
+       }
+       File myFile5=new File("C:/Users/Admin/workspace/topic.java/data/paths/level_3/After_filter_semantic_score.txt");
+       FileInputStream fstream5 = new FileInputStream("C:/Users/Admin/workspace/topic.java/data/paths/level_3/After_filter_semantic_score.txt");  
+       DataInputStream in5 = new DataInputStream(fstream5);  
+       BufferedReader br5 = new BufferedReader(new InputStreamReader(in5));  
+       File myFile6=new File("C:/Users/Admin/workspace/topic.java/data/paths/level_3/score_node.txt");
+       FileInputStream fstream6 = new FileInputStream("C:/Users/Admin/workspace/topic.java/data/paths/level_3/score_node.txt");  
+       DataInputStream in6 = new DataInputStream(fstream6);  
+       BufferedReader br6 = new BufferedReader(new InputStreamReader(in6));  
+       FileOutputStream out5=new FileOutputStream("C:/Users/Admin/workspace/topic.java/data/paths/level_3/L3_after_filter.txt");
+       PrintStream p5=new PrintStream(out5);
+       String strLine5, strLine6; 
+     strLine5 = br5.readLine();
+        strLine6 = br6.readLine();
+        System.out.println(" Nodes_after_filtration:");
+       for (int i = 0; i <myFile5.length(); i++) {
+       	
+           while (strLine5 != null && strLine6 != null)
+           {
+           	             	
+               if (strLine5.equals(strLine6))
+               {
+          
+               	strLine6 = br6.readLine();
+               	 System.out.println(strLine6);
+               	p5.println(strLine6);
+               	 
+               	 
+               	 break;
+               }
+                               
+               strLine6 = br6.readLine();
+           } 
+          
+           strLine5=br5.readLine();
+           }
+       File f7=new File("C:/Users/Admin/workspace/topic.java/data/paths/level_3/L3_after_filter.txt");
+       FileReader fr7=new FileReader(f7);
+       LineNumberReader lnr7=new LineNumberReader(fr7);
+       int linenumber7=0;
+     	while (lnr7.readLine() != null){
+       	linenumber7++;
+           }
+
+           System.out.println("Total number of nodes after filtration: " + linenumber7);
+    } 
+    catch(Exception e1){
+    	//System.out.println("Error"+e1);
+    }
+}
+
+}
+
+	
+
+
