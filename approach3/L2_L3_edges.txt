@@ -1,0 +1,220 @@
+package approach3;
+
+
+
+
+
+
+
+
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintStream;
+
+
+public class L2_L3_edges
+{
+	
+
+static int count1 = 0 ;
+
+
+static int count2 = 0 ;
+
+
+static String arrayLines1[] = new String[countLines("C:/Users/Admin/workspace/topic.java/data/paths/level_3_ap3/level2_filtered_g3.txt")];
+
+
+static String arrayLines2[] = new String[countLines("C:/Users/Admin/workspace/topic.java/data/paths/level_3_ap3/L3_after_filter.txt")];
+
+
+public static void main(String args[]) {
+
+	System.out.println("L3-L4 Edges remained after constraint");
+	System.out.println("=======================================");
+findDifference("C:/Users/Admin/workspace/topic.java/data/paths/level_3_ap3/level2_filtered_g3.txt","C:/Users/Admin/workspace/topic.java/data/paths/level_3_ap3/L3_after_filter.txt");
+
+
+displayRecords();
+
+}
+
+public static int countLines(String File){
+
+
+int lineCount = 0;
+
+
+try {
+
+
+BufferedReader br =new BufferedReader(new FileReader(File));
+
+
+while ((br.readLine()) != null) {
+
+
+lineCount++;
+
+}
+
+}
+
+catch (FileNotFoundException e) {
+
+
+e.printStackTrace();
+
+}
+
+catch (IOException e) {
+
+
+e.printStackTrace();
+
+}
+
+return lineCount;
+
+
+}
+
+public static void findDifference(String File1, String File2){
+
+	 
+String contents1 =null;
+
+
+String contents2 =null;
+
+
+try
+
+
+{
+	 
+
+FileReader file1 =new FileReader(File1);
+
+
+FileReader file2 =new FileReader(File2);
+
+
+BufferedReader buf1 =new BufferedReader(file1);
+
+
+BufferedReader buf2 =new BufferedReader(file2);
+
+
+
+while ((contents1 = buf1.readLine()) != null)
+	 
+
+{
+
+arrayLines1[count1] = contents1 ;
+
+
+count1++;
+
+
+}
+
+while ((contents2 = buf2.readLine()) != null)
+
+
+{
+
+arrayLines2[count2] = contents2 ;
+
+
+count2++;
+
+
+}
+
+}
+
+catch (Exception e){
+
+
+e.printStackTrace();
+
+}
+
+}
+
+public static void displayRecords(){
+
+
+int c1=0,c2=0,c3=0;
+
+try{
+	
+	FileOutputStream fp=new FileOutputStream("C:/Users/Admin/workspace/topic.java/data/paths/level_3_ap3/L2_L3_edges.txt");
+	PrintStream p=new PrintStream(fp);
+for (int i = 0 ; i < arrayLines1.length ; i++) {
+
+
+String a =arrayLines1[i]; c1++;
+
+
+}
+
+for (int j = 0 ; j < arrayLines2.length ; j++) {
+
+
+String b =arrayLines2[j];c2++;
+
+
+}
+
+for (int i = 0 ; i < arrayLines1.length ; i++) {
+
+
+String a =arrayLines1[i];
+
+
+String a1=a.substring(0,3);
+
+String a2=a.substring(4,7);
+
+for (int j = 0; j < arrayLines2.length; j++){
+
+
+String b =arrayLines2[j];
+
+
+if(a2.equals(b)){
+	 
+
+System.out.println(a1+"-"+a2);
+	//System.out.println(a1);
+	p.println(a1+"-"+a2);
+
+
+c3++;
+
+}
+
+}
+
+}
+
+System.out.println("Total No.of  L1=l2 edges after constraint :"+c3);
+}
+catch(Exception e)
+{
+	e.printStackTrace();
+}
+}
+
+
+}
+
+
+

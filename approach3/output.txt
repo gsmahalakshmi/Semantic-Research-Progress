@@ -1,0 +1,67 @@
+output for L2_filtration
+------------------------
+Total number of nodes before filtration: 31
+Sum of semantic Values167.0
+Average semantic Value5.387096774193548
+Total number of nodes after filtration: 5
+
+
+
+output for L3_filtration
+------------------------
+Total number nodes before filtration: 1
+Sum of semantic Values7.0
+Average semantic Value7.0
+Total number of nodes after filtration: 1
+
+
+output for L4_filtration
+------------------------
+
+Total number of nodes before filtration 4
+Sum of semantic Values0.17332999999999998
+Average semantic Value0.043332499999999996
+Total number of nodes after filtration: 2
+
+output for L1_L2 edges
+-------------------------
+L1-L2 Edges remained after constraint
+=======================================
+048-078
+118-125
+118-131
+194-107
+209-107
+209-102
+Total No.of  L1=l2 edges  :6
+
+
+output for L2_L3 edges
+-------------------------
+
+L2-L3 Edges remained after constraint
+=======================================
+131-180
+Total No.of  L1=l2 edges after constraint :1
+
+
+
+output for L3_L4 edges
+-------------------------
+L3-L4 Edges remained after constraint
+=======================================
+No edges found
+
+output for path1
+----------------
+Path-1 [000, 001, 030, 118, 131, 180]
+Path-2 [000, 118, 131, 180]
+No.of Paths-2
+
+
+
+output for path2
+----------------
+Path-1 [000, 118, 131, 180]
+No.of Paths-1
+
